@@ -1,4 +1,4 @@
-# scRNAseq_cluster_RF_proximities
+## scRNAseq_cluster_RF_proximities
 
 This set of programs clusters single cell RNA-Seq data, represented by UMI counts, with no metric assumptions and no logarithmic transformation to treat zero counts.  
 <br />
