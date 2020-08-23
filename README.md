@@ -2,7 +2,8 @@
 
 This set of programs clusters single cell RNA-Seq data, represented by UMI counts, with no metric assumptions and no logarithmic transformation to treat zero counts.  
 
-The approach is unconventional, using 
+
+The approach uses
 - binomial deviance to rank genes for filtering
 - random forest classification to produce proximities to cluster genes and cells
 - spectral consensus clustering using the random forest proximities
