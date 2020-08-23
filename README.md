@@ -14,5 +14,5 @@ For details, please refer to
 -	overview.doc 
 -	example_programs: folder containing a set of programs to analyze the Zhengmix4eq data set
 -	functions that perform the analysis, and documentation:
-  - FUNCTIONS_Spec_clust_RFproximities_scRNAseq.py
-  - function documentation.docx
+   * FUNCTIONS_Spec_clust_RFproximities_scRNAseq.py
+   * function documentation.docx
