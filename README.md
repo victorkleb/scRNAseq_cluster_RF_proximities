@@ -10,6 +10,7 @@ The approach uses
 - distributions of adjusted Rand index or Misclassification Error distance to determine an appropriate number of clusters
 - Laplacian scores computed with random forest cell proximities to confirm the gene ranks and provide additional - validation of the methodology.
 <br />
+
 For details, please refer to 
 - overview.doc 
 - example_programs: folder containing a set of programs to analyze the Zhengmix4eq data set
