@@ -198,7 +198,7 @@ for clusters in range ( 2,  n_computed_clusterings + 2 ):
   ARI = df_Adjusted_Rand_Index_individual_clusterings [ clusters ].values.tolist()
   boxplot_data_list.append ( ARI )
 	
-plt.boxplot( boxplot_data_list )
+plt.violinplot( boxplot_data_list, showextrema = False,   showmedians = True )
  
 plt.xlabel ( 'number of clusters', fontsize=6 )
 plt.ylabel ( 'Adjusted Rand Index', fontsize=6 )
@@ -227,7 +227,7 @@ for clusters in range ( 2,  n_computed_clusterings + 2 ):
   ME = df_Misclassification_Error_individual_clusterings [ clusters ].values.tolist()
   boxplot_data_list.append ( ME )
 	
-plt.boxplot( boxplot_data_list )
+plt.violinplot( boxplot_data_list, showextrema = False,   showmedians = True )
  
 plt.xlabel ( 'number of clusters', fontsize=6 )
 plt.ylabel ( 'fraction misclassified', fontsize=6 )
@@ -257,7 +257,7 @@ for clusters in range ( 2,  n_computed_clusterings + 2 ):
   ME = df_Misclassification_Error_to_CC [ clusters ].values.tolist()
   boxplot_data_list.append ( ME )
 	
-plt.boxplot( boxplot_data_list )
+plt.violinplot( boxplot_data_list, showextrema = False,   showmedians = True )
  
 plt.xlabel ( 'number of clusters', fontsize=6 )
 plt.ylabel ( 'fraction misclassified', fontsize=6 )
@@ -285,7 +285,7 @@ for clusters in range ( 2,  n_computed_clusterings + 2 ):
   ME = df_gene_misclassification_error_individual_clusterings [ clusters ].values.tolist()
   boxplot_data_list.append ( ME )
 	
-plt.boxplot( boxplot_data_list )
+plt.violinplot( boxplot_data_list, showextrema = False,   showmedians = True )
  
 plt.xlabel ( 'number of clusters', fontsize=6 )
 plt.ylabel ( 'fraction misclassified', fontsize=6 )
@@ -313,7 +313,7 @@ for clusters in range ( 2,  n_computed_clusterings + 2 ):
   ME = df_gene_misclassification_error_to_CC [ clusters ].values.tolist()
   boxplot_data_list.append ( ME )
 	
-plt.boxplot( boxplot_data_list )
+plt.violinplot( boxplot_data_list, showextrema = False,   showmedians = True )
  
 plt.xlabel ( 'number of clusters', fontsize=6 )
 plt.ylabel ( 'fraction misclassified', fontsize=6 )
