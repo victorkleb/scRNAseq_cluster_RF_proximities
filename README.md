@@ -19,7 +19,7 @@ For details, please refer to
   - utilities.py
   - function documentation.docx
 <br />
-<br />
+
 Update September 22, 2020
 <br />
 Programs to analyze outliers have been added, along with a document including analytic results and program descriptions:
