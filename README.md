@@ -18,3 +18,10 @@ For details, please refer to
   - FUNCTIONS_Spec_clust_RFproximities_scRNAseq.py
   - utilities.py
   - function documentation.docx
+<br />
+<br />
+Update September 22, 2020
+<br />
+Programs to analyze outliers have been added, along with a document including analytic results and program descriptions:
+- folder: example_programs_outlier_analysis
+- outliers.docx
