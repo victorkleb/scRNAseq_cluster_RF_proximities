@@ -454,7 +454,7 @@ def  consensus_clusterings  ( df_individual_clusterings ):
 
   print  ( '\n\n calculate consensus clusterings' ) 
  
-  n_synth_copies_clusterings = 1 + df_individual_clusterings['individual_clustering'].max().astype(int)
+  n_synth_copies_clusterings = 1 + np.int ( df_individual_clusterings['individual_clustering'].max() )    
 
   column_list = df_individual_clusterings.columns.values.tolist()
   column_list.remove ( 'individual_clustering' )
