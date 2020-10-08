@@ -109,8 +109,7 @@ def compute_binomial_deviance ( df_UMI_counts, column_name ):
   n_1_m_pi_hat =  np.array( n_vector ) - n_pi_hat
   term2 = arr_ni_m_gen_counts * np.log ( 1e-20 +  arr_ni_m_gen_counts / n_1_m_pi_hat )
 
-  rhs = term1 + term2
-  rhs_values = np.ravel ( rhs )
+  rhs = 2 * ( term1 + term2 )
 
   df_deviance = pd.DataFrame( index = df_UMI_counts.index, data = rhs.sum( axis=1 ), columns=[column_name] ) 
 
