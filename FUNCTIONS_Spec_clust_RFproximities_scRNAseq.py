@@ -1,4 +1,8 @@
 
+
+
+
+
 import pandas as pd
 import numpy  as np
 
@@ -103,11 +107,11 @@ def compute_binomial_deviance ( df_UMI_counts, column_name ):
 
   pi_hat_vector = p_vector/ p_vector.sum()
   n_pi_hat = np.array ( pi_hat_vector * n_vector )
-  term1 = arr_gen_counts * np.log ( 1e-20 + np.nan_to_num( arr_gen_counts / n_pi_hat ) )
+  term1 = arr_gen_counts * np.log ( 1e-20 +  arr_gen_counts / ( 1e-20 + n_pi_hat ) ) 
 
   arr_ni_m_gen_counts = np.array( n_vector ) - arr_gen_counts
   n_1_m_pi_hat =  np.array( n_vector ) - n_pi_hat
-  term2 = arr_ni_m_gen_counts * np.log ( 1e-20 +  arr_ni_m_gen_counts / n_1_m_pi_hat )
+  term2 = arr_ni_m_gen_counts * np.log ( 1e-20 +  arr_ni_m_gen_counts / ( 1e-20 +  n_1_m_pi_hat )  )
 
   rhs = 2 * ( term1 + term2 )
 
@@ -169,10 +173,10 @@ def compute_null_residuals ( df_UMI_counts):
   n_pi_hat = np.array ( pi_hat_vector * n_vector )
   n_1_m_pi_hat =  np.array( n_vector ) - n_pi_hat
 
-  term1 = arr_gen_counts * np.log ( 1e-20 + np.nan_to_num( arr_gen_counts / n_pi_hat ) )
+  term1 = arr_gen_counts * np.log ( 1e-20 +  arr_gen_counts / ( 1e-20 + n_pi_hat ) )   
 
   arr_ni_m_gen_counts = np.array( n_vector ) - arr_gen_counts
-  term2 = arr_ni_m_gen_counts * np.log ( 1e-20 +  arr_ni_m_gen_counts / n_1_m_pi_hat )
+  term2 = arr_ni_m_gen_counts * np.log ( 1e-20 +  arr_ni_m_gen_counts / ( 1e-20 +  n_1_m_pi_hat )  )  
 
   rhs0 = 2* ( term1 + term2 )
   sign_arg = arr_gen_counts - n_pi_hat 
@@ -183,7 +187,10 @@ def compute_null_residuals ( df_UMI_counts):
 
   return df_null_residuals
 
-    
+
+
+
+
  
 #########################################################################################   
  
@@ -453,7 +460,7 @@ def  consensus_clusterings  ( df_individual_clusterings ):
 
   print  ( '\n\n calculate consensus clusterings' ) 
  
-  n_synth_copies_clusterings = 1 + np.int ( df_individual_clusterings['individual_clustering'].max() )    
+  n_synth_copies_clusterings = 1 + np.int ( df_individual_clusterings['individual_clustering'].max() )  
 
   column_list = df_individual_clusterings.columns.values.tolist()
   column_list.remove ( 'individual_clustering' )
@@ -853,7 +860,8 @@ def   mean_proximity ( input_data_path, prox_ds_base ):
     else:
       proximity_exists = False	  
 
-  index_values = df_mean_proximity.index.values
+
+  index_values = df_mean_proximity.index.values 
   value_0_0 = df_mean_proximity[ index_values[0] ].loc [ index_values[0] ]
 	  
   df_mean_proximity = df_mean_proximity / value_0_0
